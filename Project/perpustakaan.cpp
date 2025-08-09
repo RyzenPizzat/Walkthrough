@@ -10,7 +10,6 @@ int tambah_data();
 int main()
 {
     sapa();
-    proses(a);
     return 0;
 }
 
@@ -23,6 +22,7 @@ void sapa()
     cout << "Pilih Menu : ";
     cin >> a;
     cin.ignore();
+    proses(a);
 }
 int proses(string x)
 {
@@ -43,30 +43,33 @@ int proses(string x)
     else
     {
         cout << "User salah Memilih!" << endl;
+        sapa();
     }
+    return 0;
+}
+int tambah_data()
+{
+    string t_buku;
+    string t_penulis;
+    cout << "Masukkan Nama Buku : ";
+    getline(cin, t_buku);
+    cout << "Masukkan Nama Penulis : ";
+    getline(cin, t_penulis);
+    cout << "Nama Buku : " << t_buku << ", Nama Penulis : " << t_penulis << endl;
+    buku.push_back(t_buku);
+    buku.push_back(t_penulis);
+    sapa();
     return 0;
 }
 int tampilkan()
 {
     int panjang = buku.size();
-    for (int i = 0; i < (panjang / 2); i++)
+    int hasil = panjang / 2;
+    cout << hasil << endl;
+    for (int i = 0; i <= hasil; i = i += 2)
     {
         cout << "Buku Ke : " << i + 1 << " : " << buku[i] << " - " << buku[i + 1] << endl;
+        cout << i << endl;
     }
-    sapa();
-    return 0;
-}
-int tambah_data() {
-    string t_buku;
-    string t_penulis;
-    cout << "Masukkan Nama Buku : ";
-    getline(cin,t_buku);
-    cout << "Masukkan Nama Penulis : ";
-    cin.ignore();
-    getline(cin,t_penulis);
-    cout << "Nama Buku : " << t_buku << ", Nama Penulis : " << t_penulis << endl; 
-    buku.push_back(t_buku);
-    buku.push_back(t_penulis);
-    sapa();
     return 0;
 }
