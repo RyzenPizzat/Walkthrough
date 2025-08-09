@@ -53,6 +53,7 @@ int tampilkan()
     {
         cout << "Buku Ke : " << i + 1 << " : " << buku[i] << " - " << buku[i + 1] << endl;
     }
+    sapa();
     return 0;
 }
 int tambah_data() {
@@ -64,5 +65,8 @@ int tambah_data() {
     cin.ignore();
     getline(cin,t_penulis);
     cout << "Nama Buku : " << t_buku << ", Nama Penulis : " << t_penulis << endl; 
+    buku.push_back(t_buku);
+    buku.push_back(t_penulis);
+    sapa();
     return 0;
 }
