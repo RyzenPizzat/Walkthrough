@@ -15,14 +15,24 @@ double fdeklinasi(double tanggal)
     float rumus = 23.45 * sin(deg2rad(360.0 / 365.0 * (tanggal + 284.0)));
     return fabs(rumus) < 1e-10 ? 0.0 : rumus;
 }
+int proses(double a,int b,string c); int isi();
+int main() {
+    isi();
+    return 0;
+}
 
-int main()
+int isi()
 {
     string belahan;
     int hari;
     int bulan;
     cout << "masukkan tanggal hari : ";
-    cin >> hari;
+    // cin >> hari;
+    if (!(cin >> hari)) {
+        cout << "Salah!" << endl;
+        isi();
+        return 0;
+    }
     cout << "Masukkan Urutan Angka Bulan : ";
     cin >> bulan;
     tanggal = (hari + ((bulan - 1) * 30));
@@ -32,7 +42,11 @@ int main()
     cin >> belahan;
     double deklinasi = fdeklinasi(tanggal);
     cout << "Deklinasinya adalah : " << deklinasi << " Derajat" << endl;
-
+    proses(deklinasi,tanggal,belahan);
+    return 0;
+}
+int proses(double a,int b,string c) {
+    double deklinasi = a; int tanggal = b; string belahan = c;
     if (deklinasi >= -24 && deklinasi <= 0)
     {
         if (tanggal >= 50 && tanggal <= 85)
@@ -142,5 +156,5 @@ int main()
             }
         }
     }
-    cout << "Program Berhenti." << endl;
+    return 0;
 }
