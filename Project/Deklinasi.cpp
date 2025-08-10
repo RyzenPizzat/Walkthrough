@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+#define M_PI 3.14159265358979323846
 int tanggal;
 string kalender[12] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
 
