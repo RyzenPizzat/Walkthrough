@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 string a;
-vector<string> buku = {"Tere Liye", "Bumi Series Ke-1"};
+vector<string> buku = {"Bumi Series Ke-1", "Tere Liye"};
 void sapa();int proses(string x);int tampilkan();int tambah_data();int hapus_data();
 int main()
 {
@@ -72,11 +72,14 @@ int tampilkan()
 {
     int panjang = buku.size();
     int hasil = panjang / 2;
+    int index_buku = 1;
     cout << hasil << endl;
     for (int i = 0; i <= hasil; i = i += 2)
     {
-        cout << "Buku Ke : " << i + 1 << " : " << buku[i] << " - " << buku[i + 1] << endl;
+        cout << "Buku Ke : " << index_buku << " : " << buku[i] << " - " << buku[i + 1] << endl;
+        index_buku++;
     }
+    sapa();
     return 0;
 }
 
@@ -86,8 +89,8 @@ int hapus_data()
     cout << "Masukkan Nomor Buku yang ingin dihapus : ";
     cin >> hapus;
     if (hapus >= 0) {
-        buku.erase(buku.begin() + hapus - 1);
-        buku.erase(buku.begin() + (hapus ));
+        buku.erase(buku.begin() + hapus);
+        buku.erase(buku.begin() + (hapus + 1 ));
     }
     else {
         cout << "Nomor Buku tidak valid!" << endl;
