@@ -3,11 +3,7 @@
 using namespace std;
 string a;
 vector<string> buku = {"Tere Liye", "Bumi Series Ke-1"};
-void sapa();
-int proses(string x);
-int tampilkan();
-int tambah_data();
-int hapus_data();
+void sapa();int proses(string x);int tampilkan();int tambah_data();int hapus_data();
 int main()
 {
     sapa();
@@ -80,9 +76,7 @@ int tampilkan()
     for (int i = 0; i <= hasil; i = i += 2)
     {
         cout << "Buku Ke : " << i + 1 << " : " << buku[i] << " - " << buku[i + 1] << endl;
-        cout << i << endl;
     }
-    sapa();
     return 0;
 }
 
