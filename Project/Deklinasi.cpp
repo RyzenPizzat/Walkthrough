@@ -4,7 +4,6 @@ using namespace std;
 #define M_PI 3.14159265358979323846
 int tanggal;
 string kalender[12] = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
-
 double deg2rad(double d)
 {
     return d * M_PI / 180.0;
@@ -15,8 +14,10 @@ double fdeklinasi(double tanggal)
     float rumus = 23.45 * sin(deg2rad(360.0 / 365.0 * (tanggal + 284.0)));
     return fabs(rumus) < 1e-10 ? 0.0 : rumus;
 }
-int proses(double a,int b,string c); int isi();
-int main() {
+int proses(double a, int b, string c);
+int isi();
+int main()
+{
     isi();
     return 0;
 }
@@ -28,7 +29,8 @@ int isi()
     int bulan;
     cout << "masukkan tanggal hari : ";
     // cin >> hari;
-    if (!(cin >> hari)) {
+    if (!(cin >> hari))
+    {
         cout << "Salah!" << endl;
         isi();
         return 0;
@@ -42,11 +44,14 @@ int isi()
     cin >> belahan;
     double deklinasi = fdeklinasi(tanggal);
     cout << "Deklinasinya adalah : " << deklinasi << " Derajat" << endl;
-    proses(deklinasi,tanggal,belahan);
+    proses(deklinasi, tanggal, belahan);
     return 0;
 }
-int proses(double a,int b,string c) {
-    double deklinasi = a; int tanggal = b; string belahan = c;
+int proses(double a, int b, string c)
+{
+    double deklinasi = a;
+    int tanggal = b;
+    string belahan = c;
     if (deklinasi >= -24 && deklinasi <= 0)
     {
         if (tanggal >= 50 && tanggal <= 85)
